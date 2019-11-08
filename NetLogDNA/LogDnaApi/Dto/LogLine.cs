@@ -12,8 +12,8 @@ namespace NetLogDNA.LogDnaApi.Dto
         [JsonConverter(typeof(StringEnumConverter))]
         public LoggingLevel Level { get; set; }
 
-        [JsonProperty("app")]
-        public string App { get; set; }
+        [JsonProperty("app")] 
+        public string App => LogDnaConfig.AppName;
 
         [JsonProperty("env")]
         public string Env { get; set; }

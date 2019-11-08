@@ -32,6 +32,8 @@ namespace NetLogDNA
             }
             get => _writerMaxRetries;
         }
+
+        public static string AppName { get; set; }
         
         public static string ApiKey { get; set; }
 

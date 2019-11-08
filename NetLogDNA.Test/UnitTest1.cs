@@ -14,12 +14,14 @@ namespace NetLogDNA.Test
         public async Task Test1()
         {
             // Arrange
-            LogDnaConfig.ApiKey = "1d516c1351e54e02e0e10b4df5a2b746";
+            LogDnaConfig.ApiKey = "";
+            LogDnaConfig.AppName = "NetLogDNA";
 
             var writer = new LogDnaWriter(new LogDnaApiFactory(), new DnsInfoProvider())
             {
                 Verbose = true
             };
+            
             writer.Start();
             
             // Act
@@ -36,7 +38,6 @@ namespace NetLogDNA.Test
         {
             return new LogLine()
             {
-                App = "NetLogDNA.Test",
                 Level = LoggingLevel.TRACE,
                 Env = "Test",
                 Line = content,

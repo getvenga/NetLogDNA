@@ -9,7 +9,7 @@ namespace NetLogDNA.LogDnaApi.Dto
         public ExceptionInfo Exception { get; set; }
         
         [JsonProperty("properties")]
-        public IDictionary<string, string> Properties { get; set; }
+        public IDictionary<object, object> Properties { get; set; }
 
         [JsonProperty("tags")]
         public IList<string> Tags { get; set; }

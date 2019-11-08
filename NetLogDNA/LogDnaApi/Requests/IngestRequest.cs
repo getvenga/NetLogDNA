@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Net.NetworkInformation;
 using NetLogDNA.LogDnaApi.Dto;
+using NetLogDNA.Utils;
 using Refit;
 
 namespace NetLogDNA.LogDnaApi.Requests
@@ -17,8 +18,8 @@ namespace NetLogDNA.LogDnaApi.Requests
 //        [AliasAs("mac")]
 //        public string MacAddress => GetMacAddress();
 
-        [AliasAs("now")]
-        public long UnitEpochTimestamp => GetUnixEpochTimestamp();
+        [AliasAs("now")] 
+        public long UnitEpochTimestamp => DateTime.UtcNow.ToUnixTimestamp();
         
         private static string GetMacAddress()
         {
@@ -28,11 +29,6 @@ namespace NetLogDNA.LogDnaApi.Requests
                                        && net.NetworkInterfaceType != NetworkInterfaceType.Loopback)
                 ?.GetPhysicalAddress()
                 .ToString();
-        }
-
-        private static long GetUnixEpochTimestamp()
-        {
-            return DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
         }
     }
 }
