@@ -8,6 +8,11 @@ namespace NetLogDNA.LogDnaApi.Dto
     public class LogLineBatch
     {
         [JsonProperty("lines")]
-        public IEnumerable<LogLine> Lines { get; set; }
+        public IEnumerable<LogLine> Lines { get; private set; }
+
+        public LogLineBatch(IEnumerable<LogLine> logLines)
+        {
+            Lines = logLines;
+        }
     }
 }
