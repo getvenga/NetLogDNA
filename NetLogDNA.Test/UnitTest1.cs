@@ -14,10 +14,12 @@ namespace NetLogDNA.Test
         public async Task Test1()
         {
             // Arrange
-            LogDnaConfig.ApiKey = "";
-            
-            var writer = new LogDnaWriter(new LogDnaApiFactory(), new DnsInfoProvider());
-            writer.Verbose = true;
+            LogDnaConfig.ApiKey = "1d516c1351e54e02e0e10b4df5a2b746";
+
+            var writer = new LogDnaWriter(new LogDnaApiFactory(), new DnsInfoProvider())
+            {
+                Verbose = true
+            };
             writer.Start();
             
             // Act

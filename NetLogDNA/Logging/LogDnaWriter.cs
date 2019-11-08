@@ -31,7 +31,7 @@ namespace NetLogDNA.Logging
 
         public bool Verbose { get; set; } = false;
 
-        public LogDnaWriter(ILogDnaApiFactory logDnaApiFactory, IDnsInfoProvider dnsInfoProvider)
+        internal LogDnaWriter(ILogDnaApiFactory logDnaApiFactory, IDnsInfoProvider dnsInfoProvider)
         {
             _isDisposed = false;
             _isRunning = false;
@@ -75,13 +75,6 @@ namespace NetLogDNA.Logging
 
             _isRunning = true;
             _cancellationTokenSource = new CancellationTokenSource();
-
-//            _loop = Task.Factory.StartNew(
-//                Execute,
-//                CancellationToken.None,
-//                TaskCreationOptions.LongRunning,
-//                TaskScheduler.Default
-//            );
 
             _loop = Task.Run(Execute, CancellationToken.None);
         }
@@ -177,6 +170,11 @@ namespace NetLogDNA.Logging
 
         public void Dispose()
         {
+            if (_isDisposed)
+                return;
+
+            _isDisposed = true;
+            Stop().GetAwaiter().GetResult();
         }
     }
 }
