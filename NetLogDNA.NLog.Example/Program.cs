@@ -1,7 +1,5 @@
-﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
-using NetLogDNA.NLog.Target;
+﻿using System.Threading.Tasks;
+using NetLogDNA.NLog.Extensions;
 using NLog;
 using NLog.Fluent;
 
@@ -15,9 +13,10 @@ namespace NetLogDNA.NLog.Example
             
             logger.Info()
                 .Message("With NLOG!!!")
+                .SetLogDnaTags("example", "nlog")
                 .Write();
 
-            await Task.Delay(1000);
+            await Task.Delay(5000);
         }
     }
 }
