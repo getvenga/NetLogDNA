@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using NetLogDNA.LogDnaApi.Dto;
+using NetLogDNA.NLog.Extensions;
 using NetLogDNA.Utils;
 using NLog;
 
@@ -14,7 +15,7 @@ namespace NetLogDNA.NLog.LogDna
             var meta = new Meta()
             {
                 Exception = GetExceptionInfo(logEventInfo),
-                Tags = GetTags(logEventInfo),
+                Tags = GetTags(logEventInfo)?.ToList(),
                 Properties = logEventInfo.HasProperties ? logEventInfo.Properties : new Dictionary<object, object>()
             };
             
@@ -50,15 +51,13 @@ namespace NetLogDNA.NLog.LogDna
             return exceptionInfo;
         }
 
-        private string[] GetTags(LogEventInfo logEventInfo)
+        private IEnumerable<string> GetTags(LogEventInfo logEventInfo)
         {
-            if (!logEventInfo.HasProperties || !logEventInfo.Properties.Any(prop => prop.Key.ToString() == "tags"))
+            if (!logEventInfo.HasProperties 
+                || !logEventInfo.Properties.Any(prop => prop.Key.ToString() == LogEventInfoExtensions.LogDnaTagPropertyName))
                 return new string[0];
 
-            return logEventInfo
-                .Properties["tags"]
-                .ToString()
-                .Split(',');
+            return logEventInfo.Properties[LogEventInfoExtensions.LogDnaTagPropertyName] as IEnumerable<string>;
         }
 
         private LoggingLevel MapLogLevel(LogLevel logLevel)
