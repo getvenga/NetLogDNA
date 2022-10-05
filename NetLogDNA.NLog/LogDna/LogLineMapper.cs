@@ -12,18 +12,10 @@ namespace NetLogDNA.NLog.LogDna
     {
         public LogLine Map(LogEventInfo logEventInfo, string message)
         {
-            var meta = new Meta()
-            {
-                Exception = GetExceptionInfo(logEventInfo),
-                Tags = GetTags(logEventInfo)?.ToList(),
-                Properties = logEventInfo.HasProperties ? logEventInfo.Properties : new Dictionary<object, object>()
-            };
-            
             return new LogLine()
             {
                 Line = message,
                 Env = logEventInfo.LoggerName,
-                Meta = meta,
                 Level = MapLogLevel(logEventInfo.Level),
                 UnixEpochTimestamp = logEventInfo.TimeStamp.ToUnixTimestamp()
             };

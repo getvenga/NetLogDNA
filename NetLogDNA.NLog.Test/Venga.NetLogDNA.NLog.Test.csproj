@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NetLogDNA.NLog\NetLogDNA.NLog.csproj" />
+    <ProjectReference Include="..\NetLogDNA.NLog\Venga.NetLogDNA.NLog.csproj" />
   </ItemGroup>
 
 </Project>

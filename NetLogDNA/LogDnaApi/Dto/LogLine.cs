@@ -1,27 +1,21 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-
+﻿using System.Text.Json.Serialization;
 namespace NetLogDNA.LogDnaApi.Dto
 {
     public class LogLine
     {
-        [JsonProperty("line")]
+        [JsonPropertyName("line")]
         public string Line { get; set; }
 
-        [JsonProperty("level")]
-        [JsonConverter(typeof(StringEnumConverter))]
+        [JsonPropertyName("level")]
         public LoggingLevel Level { get; set; }
 
-        [JsonProperty("app")] 
+        [JsonPropertyName("app")] 
         public string App => LogDnaConfig.AppName;
 
-        [JsonProperty("env")]
+        [JsonPropertyName("env")]
         public string Env { get; set; }
         
-        [JsonProperty("timestamp")]
+        [JsonPropertyName("timestamp")]
         public long UnixEpochTimestamp { get; set; }
-        
-        [JsonProperty("meta")]
-        public Meta Meta { get; set; }
     }
 }

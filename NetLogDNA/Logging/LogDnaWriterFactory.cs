@@ -17,7 +17,7 @@ namespace NetLogDNA.Logging
 
         private void CreateLogDnaWriterSingleton()
         {
-            _logDnaWriter = new LogDnaWriter(new LogDnaApiFactory(), new DnsInfoProvider());
+            _logDnaWriter = new LogDnaWriter(new LogDnaApiClientFactory(), new DnsInfoProvider());
         }
     }
 }

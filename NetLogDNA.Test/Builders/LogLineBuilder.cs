@@ -16,15 +16,12 @@ namespace NetLogDNA.Test.Builders
 
         private long _unixTimestamp;
 
-        private Meta _meta;
-
         private LogLineBuilder()
         {
             _env = "Death.Star";
             _line = "May the force be with you!";
             _loggingLevel = LoggingLevel.DEBUG;
             _unixTimestamp = DateTime.UtcNow.ToUnixTimestamp();
-            _meta = MetaBuilder.New.Build();
         }
 
         public LogLineBuilder WithLine(string line)
@@ -58,7 +55,6 @@ namespace NetLogDNA.Test.Builders
                 Env = _env,
                 Line = _line,
                 Level = _loggingLevel,
-                Meta = _meta,
                 UnixEpochTimestamp = _unixTimestamp
             };
         }

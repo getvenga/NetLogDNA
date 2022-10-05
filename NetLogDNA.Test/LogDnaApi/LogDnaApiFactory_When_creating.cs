@@ -6,11 +6,11 @@ namespace NetLogDNA.Test.LogDnaApi
 {
     public class LogDnaApiFactory_When_creating
     {
-        private readonly LogDnaApiFactory _factory;
+        private readonly LogDnaApiClientFactory _factory;
 
         public LogDnaApiFactory_When_creating()
         {
-            _factory = new LogDnaApiFactory();
+            _factory = new LogDnaApiClientFactory();
         }
 
         [Fact]

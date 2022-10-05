@@ -1,25 +1,25 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace NetLogDNA.LogDnaApi.Dto
 {
     public class ExceptionInfo
     {
-        [JsonProperty("name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [JsonProperty("stackTrace")]
+        [JsonPropertyName("stackTrace")]
         public string StackTrace { get; set; }
 
-        [JsonProperty("message")]
+        [JsonPropertyName("message")]
         public string Message { get; set; }
 
-        [JsonProperty("innerName")]
+        [JsonPropertyName("innerName")]
         public string InnerName { get; set; }
         
-        [JsonProperty("innerStackTrace")]
+        [JsonPropertyName("innerStackTrace")]
         public string InnerStackTrace { get; set; }
 
-        [JsonProperty("innerMessage")]
+        [JsonPropertyName("innerMessage")]
         public string InnerMessage { get; set; }
     }
 }

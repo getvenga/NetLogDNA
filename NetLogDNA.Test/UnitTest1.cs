@@ -17,7 +17,7 @@ namespace NetLogDNA.Test
             LogDnaConfig.ApiKey = "";
             LogDnaConfig.AppName = "NetLogDNA";
 
-            var writer = new LogDnaWriter(new LogDnaApiFactory(), new DnsInfoProvider())
+            var writer = new LogDnaWriter(new LogDnaApiClientFactory(), new DnsInfoProvider())
             {
                 Verbose = true
             };

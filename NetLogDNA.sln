@@ -1,14 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetLogDNA", "NetLogDNA\NetLogDNA.csproj", "{C45593E5-E69F-499E-B0BA-1D565E90DFF2}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.32804.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Venga.NetLogDNA", "NetLogDNA\Venga.NetLogDNA.csproj", "{C45593E5-E69F-499E-B0BA-1D565E90DFF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetLogDNA.Test", "NetLogDNA.Test\NetLogDNA.Test.csproj", "{A6936E57-A88E-4C1F-A7F3-799384532768}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Venga.NetLogDNA.Test", "NetLogDNA.Test\Venga.NetLogDNA.Test.csproj", "{A6936E57-A88E-4C1F-A7F3-799384532768}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetLogDNA.NLog", "NetLogDNA.NLog\NetLogDNA.NLog.csproj", "{A8665F94-0D48-497A-94E8-DB80F7CECDFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Venga.NetLogDNA.NLog", "NetLogDNA.NLog\Venga.NetLogDNA.NLog.csproj", "{A8665F94-0D48-497A-94E8-DB80F7CECDFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetLogDNA.NLog.Example", "NetLogDNA.NLog.Example\NetLogDNA.NLog.Example.csproj", "{BB3CE373-B435-4B7B-A739-C141978BE280}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Venga.NetLogDNA.NLog.Example", "NetLogDNA.NLog.Example\Venga.NetLogDNA.NLog.Example.csproj", "{BB3CE373-B435-4B7B-A739-C141978BE280}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetLogDNA.NLog.Test", "NetLogDNA.NLog.Test\NetLogDNA.NLog.Test.csproj", "{095308AD-8246-4FCE-8D25-DBFAE6D91ECB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Venga.NetLogDNA.NLog.Test", "NetLogDNA.NLog.Test\Venga.NetLogDNA.NLog.Test.csproj", "{095308AD-8246-4FCE-8D25-DBFAE6D91ECB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,5 +39,11 @@ Global
 		{095308AD-8246-4FCE-8D25-DBFAE6D91ECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{095308AD-8246-4FCE-8D25-DBFAE6D91ECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{095308AD-8246-4FCE-8D25-DBFAE6D91ECB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D275290-22AC-4AB6-9F33-B25E8DD54EC0}
 	EndGlobalSection
 EndGlobal
