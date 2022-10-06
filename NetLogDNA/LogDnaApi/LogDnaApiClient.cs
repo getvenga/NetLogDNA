@@ -25,7 +25,7 @@ namespace NetLogDNA.LogDnaApi
             var httpContent = JsonContent.Create(logLineBatch, options: new JsonSerializerOptions() { Converters = { new JsonStringEnumConverter() }});
             
             var postresult = await _httpClient.PostAsync(
-                $"https://logs.logdna.com/logs/ingest?hostname={ingestRequestParams.HostName}?now={ingestRequestParams.UnitEpochTimestamp}", httpContent
+                $"https://logs.logdna.com/logs/ingest?hostname={ingestRequestParams.HostName}&now={ingestRequestParams.UnitEpochTimestamp}", httpContent
             );
 
             return postresult;

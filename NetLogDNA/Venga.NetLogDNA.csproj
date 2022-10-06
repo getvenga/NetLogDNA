@@ -11,7 +11,7 @@
       <PackageProjectUrl>https://github.com/getvenga/NetLogDNA</PackageProjectUrl>
       <RepositoryType>https://github.com/getvenga/NetLogDNA</RepositoryType>
       <PackageTags>logging,logdna,log,monitoring</PackageTags>
-      <Version>1.0.1</Version>
+      <Version>1.0.2</Version>
       <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
