@@ -41,5 +41,11 @@ namespace NetLogDNA.NLog.Target
 
             _logDnaWriter.AddLine(logLine);
         }
+
+        protected override void Dispose(bool disposing)
+        {
+
+            base.Dispose(disposing);
+        }
     }
 }

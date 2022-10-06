@@ -174,6 +174,9 @@ namespace NetLogDNA.Logging
                 return;
 
             _isDisposed = true;
+
+            _logDnaApi.Dispose();
+
             Stop().GetAwaiter().GetResult();
         }
     }

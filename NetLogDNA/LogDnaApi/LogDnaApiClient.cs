@@ -30,5 +30,10 @@ namespace NetLogDNA.LogDnaApi
 
             return postresult;
         }
+
+        public void Dispose()
+        {
+            _httpClient?.Dispose();
+        }
     }
 }
